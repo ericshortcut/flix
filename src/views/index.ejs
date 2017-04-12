@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+   <div ng-app="myApp" ng-controller="myCtrl"> 
+        <a href="#/" title="">Index</a>
+        <a href="#one" title="">One</a>
+        <a href="#two" title="">Two</a>
+        <h1>{{helloWorld}}</h1>
+        <div ng-view></div>
+    </div>
+</body>
+</html>
