@@ -6,9 +6,9 @@ app.controller('myCtrl', ( $scope ) => {
     $scope.helloWorld = "Hello world";
 
 })
-.controller('formCtrl', ( $scope, $http ) => {
+.controller('formCtrl', ( $scope, $http, localStorageService ) => {
 
-    $scope.pesquisar = ( movie ) => {
+    $scope.search = ( movie ) => {
 
         $scope.resultEmpty = true;
         $scope.movies = [];
@@ -24,6 +24,18 @@ app.controller('myCtrl', ( $scope ) => {
           }, function(e){
               $scope.moviesError = response.data.Error
           });
+    };
+
+    $scope.toggleFavorites = ( movie ) => {
+      if( localStorageService.get( movie.imdbID ) )
+      {
+        localStorageService.remove(movie.imdbID);
+        console.log("remove");
+      }else{
+        console.log("ad");
+        localStorageService.set(movie.imdbID, movie);
+      }
+      console.log(localStorageService.keys());
     };
 
 });

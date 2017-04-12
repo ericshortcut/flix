@@ -1,8 +1,8 @@
 module.exports =  (()=>{
 
-const app = angular.module("myApp", ["ngRoute"]);
+const app = angular.module("myApp", ["ngRoute","LocalStorageModule"]);
 
-    app.config(($routeProvider)=> {
+    app.config(($routeProvider,localStorageServiceProvider)=> {
 
         $routeProvider
         .when("/", {
@@ -15,9 +15,10 @@ const app = angular.module("myApp", ["ngRoute"]);
             templateUrl : "/two.htm"
         })
         .otherwise({ redirectTo: '/' })
-       
+        localStorageServiceProvider.setPrefix('flix');
+
     })
-    
+
     return app;
 
 })();
