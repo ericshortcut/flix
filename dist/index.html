@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Index</title>
 </head>
 <body>
-   <div ng-app="myApp" ng-controller="myCtrl">
+   <div ng-app="myApp" ng-controller="myCtrl"> 
         <a href="#/" title="">Index</a>
         <a href="#one" title="">One</a>
         <a href="#two" title="">Two</a>
+        <h1>{{helloWorld}}</h1>
         <div ng-view></div>
     </div>
-</body>
+<script type="text/javascript" src="app.bundle.js"></script></body>
 </html>
