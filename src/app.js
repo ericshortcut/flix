@@ -38,4 +38,32 @@ app.controller('myCtrl', ( $scope ) => {
       console.log(localStorageService.keys());
     };
 
+})
+.controller('favoritesCtrl', ( $scope, localStorageService ) => {
+    $scope.movies = [];
+    let updateMovies = (() =>{
+        console.log("update");
+        $scope.movies = localStorageService
+                       .keys()
+                       .map( (movie) =>{
+                          return localStorageService.get(movie);
+                       });
+    });
+
+    updateMovies();
+    
+    $scope.toggleFavorites = ( movie ) => {
+      if( localStorageService.get( movie.imdbID ) )
+      {
+        localStorageService.remove(movie.imdbID);
+        console.log("remove");
+      }else{
+        console.log("ad");
+        localStorageService.set(movie.imdbID, movie);
+      }
+      updateMovies();
+      console.log(localStorageService.keys());
+    };
+
+
 });

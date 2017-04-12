@@ -1,0 +1,5 @@
+<div ng-app="myApp" ng-controller="favoritesCtrl">
+  <li ng-repeat="movie in movies">
+    {{movie.Title}} <button ng-click="toggleFavorites(movie)">+</button>
+  </li>
+</div>

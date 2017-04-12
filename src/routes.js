@@ -8,16 +8,18 @@ const app = angular.module("myApp", ["ngRoute","LocalStorageModule"]);
         .when("/", {
             templateUrl : "/main.htm"
         })
-        .when("/one", {
-            templateUrl : "/one.htm"
+        .when("/favorites", {
+            templateUrl : "/favorites.htm"
         })
         .when("/two", {
             templateUrl : "/two.htm"
         })
         .otherwise({ redirectTo: '/' })
         localStorageServiceProvider.setPrefix('flix');
-
+        
     })
+
+
 
     return app;
 

@@ -4,7 +4,7 @@
           search
           <input type="text" ng-model="movie" ng-change="search(movie)"/>
       </label>
-      <input type="submit" ng-click="pesquisar(movie)" value="Save" />
+      <input type="submit" ng-click="pesquisar(movie)" value="Search" />
   </form>
   <p ng-hide="{{response.data.Search}}">
     <li ng-repeat="movie in movies">

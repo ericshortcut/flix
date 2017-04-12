@@ -14,32 +14,32 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Index',
-            template: `src/views/index.ejs`, 
-            inject: 'body', 
+            template: `src/views/index.ejs`,
+            inject: 'body',
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
             title: 'Index',
-            template: `src/views/partials/main.ejs`, 
-            inject: 'body', 
+            template: `src/views/partials/main.ejs`,
+            inject: 'body',
             filename: 'main.htm'
         }),
          new HtmlWebpackPlugin({
-            title: 'One',
-            template: `src/views/partials/one.ejs`, 
-            inject: 'body', 
-            filename: 'one.htm'
+            title: 'Favorites',
+            template: `src/views/partials/favorites.ejs`,
+            inject: 'body',
+            filename: 'favorites.htm'
         }),
          new HtmlWebpackPlugin({
             title: 'Two',
-            template: `src/views/partials/two.ejs`, 
-            inject: 'body', 
+            template: `src/views/partials/two.ejs`,
+            inject: 'body',
             filename: 'two.htm'
         }),
          new HtmlWebpackPlugin({
             title: '404',
-            template: `src/views/partials/404.ejs`, 
-            inject: 'html', 
+            template: `src/views/partials/404.ejs`,
+            inject: 'html',
             filename: '404.htm'
         })
     ]
