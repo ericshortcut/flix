@@ -9,12 +9,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.2/angular-local-storage.js"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
-<body>
+<body class="wrapper">
+  <div class="container">
+
    <div ng-app="myApp" ng-controller="myCtrl">
-        <a href="#/" title="">Home</a>
-        <a href="#favorites" title="">Favorites</a>
-        <a href="#two" title="">Two</a>
-        <div ng-view></div>
+     <nav class="nav" role="navigation">
+       <ul class="nav__list">
+         <li class="nav__list__item">
+           <a href="#/" title="">Home</a>
+         </li>
+         <li class="nav__list__item">
+           <a href="#favorites" title="">Favorites</a>
+         </li>
+       </ul>
+     </nav>
+     <div ng-view></div>
     </div>
+  </div>
 </body>
 </html>

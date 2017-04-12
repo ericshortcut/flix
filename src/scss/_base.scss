@@ -1,3 +1,12 @@
-/* 
-    Vars - Font Colors | Background Colors ...
+/*
+    Vars - Colors
 */
+
+$backGroundColor: #302e2e;
+$invertedBackGroundColor: #FF0;
+
+$listItemColor: #FFF;
+$listBackGroundItemColor: #F00;
+$listItemColorHoverOrFocus: $listBackGroundItemColor;
+$listBackGroundItemColorHoverOrFocus: $listItemColor;
+$listItemColorActive: #FF0;

@@ -31,12 +31,6 @@ module.exports = {
             filename: 'favorites.htm'
         }),
          new HtmlWebpackPlugin({
-            title: 'Two',
-            template: `src/views/partials/two.ejs`,
-            inject: 'body',
-            filename: 'two.htm'
-        }),
-         new HtmlWebpackPlugin({
             title: '404',
             template: `src/views/partials/404.ejs`,
             inject: 'html',

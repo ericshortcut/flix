@@ -1,0 +1,32 @@
+
+.nav__list{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  background: $invertedBackGroundColor;
+  text-align: center;
+}
+
+.nav__list__item{
+  display: inline-block;
+  margin-right: 4em;
+}
+
+.nav__list__item{
+  color: $listItemColor;
+  background: $listBackGroundItemColor;
+}
+
+.nav__list__item a{
+  text-decoration: none;
+  color: inherit;
+  background: inherit;
+  padding: 0.5em 1em;
+}
+
+.nav__list__item:hover a,
+.nav__list__item:focus a
+.nav__list__item:focus{
+  border-bottom: 0.5em solid $listItemColor;
+}
