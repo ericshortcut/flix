@@ -1,4 +1,4 @@
-# Template - WebPack / Angular
+# Flix - WebPack / Angular
 
 ## Dependencies
 
@@ -11,12 +11,12 @@
 
 Clone project
 ```
-git clone https://github.com/ericshortcut/angular-webpack.git
+git clone https://github.com/ericshortcut/flix.git
 ```
 
 Install dependencies
 ```
-cd angular-webpack
+cd flix
 npm install
 ```
 
