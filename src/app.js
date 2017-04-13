@@ -1,13 +1,24 @@
 const app = require('./routes.js');
 const css = require('./scss/app.scss');
 
-app.controller('myCtrl', ( $scope ) => {
+app.controller('myCtrl', ( $scope, $rootScope ) => {
 
     $scope.helloWorld = "Hello world";
 
-})
-.controller('formCtrl', ( $scope, $http, localStorageService ) => {
+    $rootScope.$on('path:change', function (event, path) {
+      $scope.index = '';
+      $scope.favorites = '';
+      switch(path){
+         case "/" : $scope.index = 'active'; break
+         case "/favorites" : $scope.favorites = 'active'; break
+         default: $scope.notFound = 'active'; break
+      }
 
+    });
+
+})
+.controller('formCtrl', ( $scope, $http, localStorageService, $rootScope, $location ) => {
+    $rootScope.$emit('path:change', $location.path());
     $scope.search = ( movie ) => {
 
         $scope.resultEmpty = true;
@@ -39,8 +50,9 @@ app.controller('myCtrl', ( $scope ) => {
     };
 
 })
-.controller('favoritesCtrl', ( $scope, localStorageService ) => {
+.controller('favoritesCtrl', ( $scope, localStorageService, $rootScope, $location ) => {
     $scope.movies = [];
+    $rootScope.$emit('path:change', $location.path()); // $rootScope.$on
     let updateMovies = (() =>{
         console.log("update");
         $scope.movies = localStorageService

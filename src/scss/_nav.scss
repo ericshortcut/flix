@@ -26,7 +26,7 @@
 }
 
 .nav__list__item:hover a,
-.nav__list__item:focus a
-.nav__list__item:focus{
+.nav__list__item:focus a,
+.nav__list__item.active a{
   border-bottom: 0.5em solid $listItemColor;
 }

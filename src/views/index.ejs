@@ -15,10 +15,10 @@
    <div ng-app="myApp" ng-controller="myCtrl">
      <nav class="nav" role="navigation">
        <ul class="nav__list">
-         <li class="nav__list__item">
-           <a href="#/" title="">Home</a>
+         <li class="nav__list__item {{index}}">
+           <a href="#/" title="">Home </a>
          </li>
-         <li class="nav__list__item">
+         <li class="nav__list__item {{favorites}}">
            <a href="#favorites" title="">Favorites</a>
          </li>
        </ul>
