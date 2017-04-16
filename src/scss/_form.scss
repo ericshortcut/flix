@@ -2,7 +2,7 @@
     Form - Inputs. Buttons
 */
 
-input,.btn{
+input,.btn,select{
   border: 1px solid #FFF;
   padding: $padding-box;
   font-family: inherit;
@@ -17,4 +17,10 @@ input,.btn{
   padding: 1em 2em;
   background: $bg-color;
   color: $font-color-reversed;
+}
+
+.form__filter, select{
+    vertical-align: bottom;
+    background: #FFF;
+    display: inline-block
 }

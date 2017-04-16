@@ -2,19 +2,16 @@
     Vars - Colors, Font, Spacing
 */
 
-$font-color: #000;
-$font-color-reversed: #fff;
-$bg-color: $font-color;
-$bg-color-reversed: $font-color-reversed;
 $font-family:helvetica;
 $font-color-cto: #000;
+$font-color: #000;
+$font-color-reversed: #fff;
+
+$bg-color: $font-color;
+$bg-color-reversed: $font-color-reversed;
 $bg-color-cto: #FF0;
 
 $padding-box: 1em 2em;
-
-
-
-
 
 .main__title{
   padding:1em 0;
