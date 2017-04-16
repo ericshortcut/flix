@@ -2,12 +2,22 @@
       <h1 class="main__title">Pesquise Filmes</h1>
       <form class="form__search" novalidate>
         <input type="text" ng-model="movie" ng-change="search(movie)" class="form__search__text col-1-2"/>
-        <input type="submit" ng-click="pesquisar(movie)" value="Search" class="form__search__btn btn"/>
+        <input type="submit" ng-click="search(movie)" value="Search" class="form__search__btn btn"/>
+        <label class="form__filter">Ordenar por:
+          <select ng-model="filter" ng-change="search(movie,filter)">
+
+            <option value="">---</option>
+            <option value="ano">Ano</option>
+            <option value="votos">Votos</option>
+            <option value="categoria">Categoria</option>
+          </select>
+        {{filter}}
+        </label>
       </form>
       
       <ul ng-hide="{{response.data.Search}}" class="search__resolts clear-fix">
         <li ng-repeat="movie in movies" class="search__resolt__item col-1-1">
-          {{movie.Title}} 
+          {{movie.Title}} | {{movie.Year}}
           <b ng-click="toggleFavorites(movie)" class="btn icon plus pull-right"></b> 
         </li>
         <li ng-show="resultEmpty && movie.length" class="search__resolt__item col-1-1">Não encontrado</li>

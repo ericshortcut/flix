@@ -19,7 +19,26 @@ app.controller('myCtrl', ( $scope, $rootScope ) => {
 })
 .controller('formCtrl', ( $scope, $http, localStorageService, $rootScope, $location ) => {
     $rootScope.$emit('path:change', $location.path());
-    $scope.search = ( movie ) => {
+    $scope.search = ( movie, filter ) => {
+        
+        const id = (a) => { console.log(a);return a; };
+        const ano = (a,b) => { 
+          if (Number.parseInt(a.Year) < Number.parseInt(b.Year))
+            return -1;
+          if (Number.parseInt(a.Year) > Number.parseInt(b.Year))
+            return 1;
+          return 0;
+        };
+
+        var filterSelected = (function(a){
+            var opt = { 
+              "" : id , // TODO: Filter by empty
+              "votos": id, // TODO: Filter by Votos
+              "categoria": id, // TODO: Filter by category
+              "ano": ano
+            };
+            return opt[a];
+        })(filter);
 
         $scope.resultEmpty = true;
         $scope.movies = [];
@@ -29,7 +48,7 @@ app.controller('myCtrl', ( $scope, $rootScope ) => {
           .get("https://omdbapi.com/?s="+movie)
           .then(function(response) {
               if(response.data.Response !== "False"){
-                  $scope.movies = response.data.Search;
+                  $scope.movies = response.data.Search.sort(filterSelected);
                   $scope.resultEmpty = false;
               }
           }, function(e){
