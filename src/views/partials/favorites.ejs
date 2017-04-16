@@ -1,8 +1,21 @@
 <div ng-app="myApp" ng-controller="favoritesCtrl">
   <h1 class="main__title">Filmes Favoritos</h1>
+  <form class="form__search" novalidate>
+        <label class="form__filter">
+              Ordenar por:
+              <select ng-model="filter" ng-change="applyFilter()">
+                <option value="">---</option>
+                <option value="ano">Ano</option>
+                <option value="votos">Votos</option>
+                <option value="categoria">Categoria</option>
+              </select>
+
+        </label>
+    </form>
   <ul class="favorite__items clear-fix">
     <li ng-repeat="movie in movies" class="favorite__item col-1-1">
-        {{movie.Title}} <b ng-click="toggleFavorites(movie)" class="btn icon plus pull-right"></b> 
+        {{movie.Title}} | {{movie.Year}}
+        <b ng-click="toggleFavorites(movie)" class="btn icon plus pull-right"></b> 
     </li>
     <li ng-show="movies.length == 0" class="favorite__item col-1-1">Lista vazia, adicione Filmes na <a href="#/">página principal<a/></li>
   </ul>

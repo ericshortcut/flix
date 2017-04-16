@@ -3,15 +3,15 @@
       <form class="form__search" novalidate>
         <input type="text" ng-model="movie" ng-change="search(movie)" class="form__search__text col-1-2"/>
         <input type="submit" ng-click="search(movie)" value="Search" class="form__search__btn btn"/>
-        <label class="form__filter">Ordenar por:
+        <label class="form__filter">
+          Ordenar por:
           <select ng-model="filter" ng-change="search(movie,filter)">
-
             <option value="">---</option>
             <option value="ano">Ano</option>
             <option value="votos">Votos</option>
             <option value="categoria">Categoria</option>
           </select>
-        {{filter}}
+
         </label>
       </form>
       
