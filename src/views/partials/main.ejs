@@ -1,16 +1,15 @@
-<div ng-app="myApp" ng-controller="formCtrl">
-  <h1>Search by Movies' Names</h1>
-  <form novalidate class="simple-form">
-      <label>
-          search
-          <input type="text" ng-model="movie" ng-change="search(movie)"/>
-      </label>
-      <input type="submit" ng-click="pesquisar(movie)" value="Search" />
-  </form>
-  <p ng-hide="{{response.data.Search}}">
-    <li ng-repeat="movie in movies">
-      {{movie.Title}} <button ng-click="toggleFavorites(movie)">+</button>
-    </li>
-    <li ng-show="resultEmpty && movie.length">No events</li>
-  </p>
-</div>
+<main  ng-app="myApp" ng-controller="formCtrl">
+      <h1 class="main__title">Pesquise Filmes</h1>
+      <form class="form__search" novalidate>
+        <input type="text" ng-model="movie" ng-change="search(movie)" class="form__search__text col-1-2"/>
+        <input type="submit" ng-click="pesquisar(movie)" value="Search" class="form__search__btn btn"/>
+      </form>
+      
+      <ul ng-hide="{{response.data.Search}}" class="search__resolts clear-fix">
+        <li ng-repeat="movie in movies" class="search__resolt__item col-1-1">
+          {{movie.Title}} 
+          <b ng-click="toggleFavorites(movie)" class="btn icon plus pull-right"></b> 
+        </li>
+        <li ng-show="resultEmpty && movie.length" class="search__resolt__item col-1-1">Não encontrado</li>
+      <ul>
+</main>

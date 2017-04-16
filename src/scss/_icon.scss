@@ -1,0 +1,16 @@
+/*
+    Icons - Plus, Minus, ...
+*/
+
+.icon{
+  display:block;
+  width: 1em;
+}
+
+.plus:after{
+  content:'+';
+}
+
+.minus:after{
+  content:'-';
+}

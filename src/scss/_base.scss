@@ -1,12 +1,33 @@
 /*
-    Vars - Colors
+    Vars - Colors, Font, Spacing
 */
 
-$backGroundColor: #302e2e;
-$invertedBackGroundColor: #FF0;
+$font-color: #000;
+$font-color-reversed: #fff;
+$bg-color: $font-color;
+$bg-color-reversed: $font-color-reversed;
+$font-family:helvetica;
+$font-color-cto: #000;
+$bg-color-cto: #FF0;
 
-$listItemColor: #FFF;
-$listBackGroundItemColor: #F00;
-$listItemColorHoverOrFocus: $listBackGroundItemColor;
-$listBackGroundItemColorHoverOrFocus: $listItemColor;
-$listItemColorActive: #FF0;
+$padding-box: 1em 2em;
+
+
+
+
+
+.main__title{
+  padding:1em 0;
+  color: $bg-color-cto;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+

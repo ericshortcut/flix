@@ -1,0 +1,24 @@
+/*
+    Lists
+*/
+
+.search__resolt__item,
+.favorite__item{
+  list-style-type: none;
+  background: $bg-color-reversed;
+  padding: 1em 1.2em;
+  border-top: 1px solid black;
+  padding-right:0;
+  position: relative;
+}
+
+.search__resolt__item .btn,
+.favorite__item .btn{
+  border: 1px solid #000;
+  border-top:none;
+}
+
+.favorite__items .plus:after,
+.favorite__items .minus:after{
+    content:'-'
+}
